@@ -1,1 +1,1 @@
-# latex-xunthesis
+# 这是一个可以编译的论文模板
