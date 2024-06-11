@@ -1,0 +1,33 @@
+\section{引言}
+\subsection{为什学~\LaTeXe}
+虽然word处理文字方便，但想要获得一个准确的样式却很难，特别是在公式与图片较多的时候会存在很多问题，而\LaTeX 排版数学公式非常高效，你一定没见过
+\begin{equation}
+\int_{a}^{b} \frac{d}{dx}\left( \frac{\sqrt{x^4 - 3x^2 + 2x + 1}}{\ln(x) - \sin(x)} \right) dx =
+\left. \sum_{n=1}^{\infty} \frac{1}{n^2 + nx} \right|_{a}^{b} +
+\prod_{i=1}^{n} i^2 - \bigg( \frac{\cos(x) + \sin(x)}{e^{x^2} - 1} \bigg)^{\frac{3}{2}} 
+\tag{\ding{100}}
+\end{equation}
+这行公式仅需3行代码就搞定了。现在就带你一起来看看吧！
+\subsection{\LaTeX 如何安装}
+MiKTex 和Texlive都是主流软件，网上都有教程这里就不细说了。编辑体验比较好的有\href{https://cn.overleaf.com}{OverLeaf}和
+VSCode。OverLeaf浏览器打开即用，本模板就由该网站提供的工具所作，VSCode需要配置环境，它的主要在输入提示上非常友好，不过这一点似乎TexLive支持的也挺好，VSCode适合有编程基础的同学。
+\subsection{\LaTeX 模板使用}
+想要写出一篇完整论文，除了.cls文件配置的格式文件，写作的过程的其他宏包仍然需要手动添加。本文就是基于xnuthesis.cls编写的，不一定适合所有人,模板提供了一些基础格式，如果需要更精细的格式还需自行重构。
+
+
+\section{\LaTeX 快速入门}
+作者也不是什么LaTeX专家，只能说是入门比较快的新手，浅浅分享一波经验！
+新手当然是推荐看视频了，如果你是码农，那么直接上文档！
+\begin{enumerate}
+    \item 《一份不太简短的\LaTeXe 介绍》这本书做的不错，翻阅了无数遍，甚至写这篇文章还在用，入门前觉得像词典，入门后感觉是比较简洁的，放下它的github仓库地址:~\url{https://github.com/CTeX-org/lshort-zh-cn}。
+    \item AI: 国内的通义千问，国外有许多免费ChatGPT-4站点可用，个人一直在用的\url{https://www.coze.com}挺不错的，作为新手几乎有一半的问题是靠它解决的。唯一不足之出就是大模型写代码还是一些存在bug的。
+    \item 各类开源网站论坛
+    \begin{itemize}
+        \item \href{https://www.latexstudio.net/}{LaTex工作室}:该工作室在b站上的视频也值得去看。
+        \item  \href{https://tex.stackexchange.com}{Tex.StackexChange}:一个专注解决Tex问题的 ``stackoverflow''。
+        \item \href{https://ctan.org/}{CTAN} :开源宏包海洋，入海，做一个\LaTeX 极客。
+    \end{itemize}
+    \item  高校毕业论文模板，如\url{https://github.com/sjtug/SJTUThesis}，是上海交通大学的论文模板，这个项目用了\href{https://www.latex-project.org/latex3/}{\LaTeX3}语法，是一个非常新的项目。入门的话更推荐北航，天津大学等的模板，它们的类文件语法偏Tex。
+\end{enumerate}
+
+

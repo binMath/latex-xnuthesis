@@ -1,0 +1,36 @@
+\usetikzlibrary{arrows,shapes,calc,positioning}
+\begin{circuitikz}[american]
+\draw (0,0) node [scale=1.5,transformer core
+] (T){}
+      (T.A1) node[above] {A1}
+      (T.A2) node[below] {A2}
+      (T.B1) node[above left] {B1}
+      (T.B2) node[below left] {B2}
+      (T.base) node{};
+\path (T.B1) -| ++ (2,1) coordinate (tb1){};% define a coordinate at top right relative to B1
+\draw (T.B1) -- ++ (0,1) to[D*,-*]  (tb1);
+\draw (T.B2) to[D*] ++(2,0)coordinate(tba){} -| (tba |- tb1);
+\path (T.B2) |- ++(3,-1) coordinate(tb2){}; % define a coordinate at bottom right relative to B2
+\draw (tb2) to[D*,*-] ++(-3,0) -- (T.B2);
+\draw (tb2) --(tb2 |- T.B1) to[D*] (T.B1);
+% place voltage labels
+\draw(T.A1) to[open,v<={$240V_{rms}$,o-o}](T.A2);
+\draw($(T.B1)!0.3!(T.B2)$) node[]{$12V_{rms,AC}$}(T.B1);
+\draw ($(T.B1)!0.8!(T.B2)$)node[]{$12V_{rms,AC}$}(T.B2);
+\draw[thick] ($(T.B1)!0.51!(T.B2)-(1cm,0)$)coordinate[](c){} -- ++ (12.44,0) -| ++ (1,-1) node[ground]{};                          % add a gorund to neutral line
+% place capacitors and resistor (upper branches)
+\draw(6,1) node[](d1){} to [C,l_=$C_1$, *-*] (c -| d1);
+\draw(10,1)node[](d2){} to [C,l_=$C_3$, *-*] (c -| d2);
+\draw(13,1)node[](d3){} to [R,l=$R_L$]       (c -| d3);
+% place rectangles
+\draw (7.5,0.5)  rectangle (8.5,1.5) node[below left= 0.25cm and 0.1cm]{780s};
+\draw (7.5,-3.6) rectangle (8.5,-4.6)node[above left=0.25cm and 0.1cm]{790s};
+% place capacitors and resistors (lower branches)
+\draw(6,-4.15) node[](d4){} to [C,l_=$C_2$, *-*] (c -| d4);
+\draw(10,-4.15)node[](d5){} to [C,l_=$C_4$, *-*] (c -| d5);
+\draw(13,-4.15)node[](d6){} to [R,l=$R_L$]       (c -| d6);
+\draw (8,0.5)  node[](d7){} to [short,-*]        (c -| d7) --(8,-3.6);
+% place top and bottom lines
+\draw(2,1) -- (7.5,1) (8.5,1) --(11,1) to[short,i^={$I_L$}] (13,1);
+\draw(2,-4.15) -- (7.5,-4.15) (8.5,-4.15) --(13,-4.15);
+\end{circuitikz}

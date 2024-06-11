@@ -1,0 +1,90 @@
+%=========信息录入
+\xnxyInfo{
+ session={2024届},
+ id ={20201405xxxx}, 
+ displaytitle={毕业论文（设计）},
+ title={基于\LaTeX 的两月半研究 \\ ---以xxx为例}, 
+ author={xxx},
+ department={数学与信息科学学院},
+ major={计算机专业}, 
+ supervisor={指导老师}, 
+ assocsupervisor={副导师}, 
+ date={2024年5月}
+}
+
+\usepackage{enumitem} %item设置
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true, % 启用颜色链接
+    linkcolor=black,   % 内部链接颜色
+    citecolor=green, % 引用链接颜色
+    filecolor=magenta, % 文件链接颜色
+    urlcolor=red        % 外部 URL 链接颜色
+}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\DeclareGraphicsExtensions{.pdf,.eps,.png,.jpg,.jpeg}
+\usepackage{ntheorem}
+
+\let \slantint \int
+\usepackage{cmupint}
+\usepackage{pifont}%雪花星符号
+\usepackage{booktabs} %三线表
+
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\NewDocumentCommand{\emphasize}{m}{{\color{blue}\textbf{#1}}}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{listings}
+\RenewDocumentCommand{\lstlistingname}{}{代码}
+\lstdefinestyle{Matlab}{
+language={Matlab},
+basicstyle=\zihao{5}\ttfamily,
+columns=flexible,
+frame=single, framerule=1pt,
+backgroundcolor=\color{white},
+keywordstyle=\color{blue},
+commentstyle=\color{green!50!black}, % 移除 \itshape
+stringstyle=\color{blue},
+breaklines=true, % 允许自动换行
+showspaces=false, % 不显示空格
+showstringspaces=false,% string不显示空格
+numbers=left, % 在左侧显示行号
+numberstyle=\zihao{5}, % 行号的字体大小
+numbersep=5pt, % 行号与代码的距离
+xleftmargin=3em, xrightmargin=3em,
+captionpos=b,% 题注在下
+}
+\lstdefinestyle{LaTex}{
+language=[LaTeX]TeX,
+basicstyle=\zihao{5}\sffamily,
+columns=flexible,
+frame=single, framerule=1pt,
+backgroundcolor=\color{white},
+keywordstyle=\color{blue},
+commentstyle=\color{green!75!black}, % 移除 \itshape
+stringstyle=\color{blue},
+breaklines=true, % 允许自动换行
+showspaces=false, % 不显示空格
+showstringspaces=false,% string不显示空格
+xleftmargin=3em, xrightmargin=3em,
+captionpos=b,% 题注在下
+}
+
+
+%=========绘图包
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[siunitx]{circuitikz}%电路图
+\usepackage{fancybox}
+\usetikzlibrary{calc}
+%======================文献加载格式
+\usepackage[backend=biber,style=gb7714-2015, gbalign=gb7714-2015,gbnamefmt =lowercase]{biblatex}
+\addbibresource{refs.bib}
+%======封面
+\usepackage{xfakebold}
+\usepackage{xeCJKfntef}%下划线兼容问题
+
+
+

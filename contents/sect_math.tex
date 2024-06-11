@@ -1,0 +1,86 @@
+\section{数学}
+\LaTeX 公式符号系统比较完整，不会基本可查，作者虽是数学系但所选数学论文中公式使用的也较少，但还是总结了一些值得注意的坑。
+\subsection{数学符号}
+\subsubsection{分数}
+使用行内公式会显得小，而使用\verb|\dfrac| 会感觉太挤了, 由于行间距一般不能改变，所以要么调行间距，要么使用行间公式，看下面示例
+\begin{center}
+    \begin{minipage}[c]{4em}
+    有志登山顶$\dfrac{3}{9}$， 无志站$\frac{0}{9}$。
+\end{minipage}
+\end{center}
+一般情况分数上下太宽建议直接放在行间。
+\subsubsection{积分符号}
+一些情况下我们可能需要直立体，而不是斜体。
+
+ 牛顿-莱布尼茨公式：
+\[ \slantint_a^b f(x)\, dx=F(b)-F(a) , \forall x \in [a,b],F^{\prime}(x)=f(x) \]
+
+
+高斯定理（散度定理）可以表示为：
+\[
+\oiint\limits_{\partial V} \mathbf{F} \cdot d\mathbf{S} = \iiint\limits_{V} \nabla \cdot \mathbf{F} \, dV
+\]
+
+其中，
+\begin{itemize}
+    \item $\oiint\limits_{\partial V} \mathbf{F} \cdot d\mathbf{S}$ 表示向量场 $\mathbf{F}$ 通过闭合表面 $\partial V$ 的向外通量，
+    \item $\iiint\limits_{V} \nabla \cdot \mathbf{F} \, dV$ 表示向量场 $\mathbf{F}$ 在体积 $V$ 内的散度的积分。
+\end{itemize}
+
+
+\subsubsection{对齐点}
+这里align与aligned完全是两个环境，aligned不是一个公式环境,
+
+align:
+\begin{align}
+ a & = b + c \\
+ & = d + e 
+ \end{align}
+ 
+ aligned:
+ \begin{equation}
+ \begin{aligned}
+ a&= b+ c\\
+ d&= e+ f+g\\
+ h+i&= j+k\\
+ l+m&= n
+ \end{aligned}
+ \end{equation}
+ 对齐需要对齐点，一般在\& 处对齐。
+ \subsection{证明、定理和公理}
+ 本模板序号都用section编号，如果想使用单个序号1，2，3等，当然也可以通过类文件自定义。
+ \begin{corollary}
+ 生活可能不像你想象的那么好，但是也不会像你想象的那么糟，人的脆弱和坚强都超乎了自己的想象，有时候脆弱的一句话会让你泪流满面，有时候你发现自己咬着牙已经走过了很长的路。
+ \end{corollary}
+ \begin{theorem}[三角形的内积和]
+  两直角的平方差一定小于正弦的30°的一半。
+ \end{theorem}
+
+
+\begin{exercise}
+子曰：打架用砖乎！不亦乱乎！\hfill ---《论语》
+\end{exercise}
+\begin{lemma}
+ 可导函数的每一个可导的极值点都是驻点（函数的导数在该点为零）。
+\end{lemma}
+
+\begin{proof}
+     利用\[i +j =m\overrightarrow{a}\]，可以得到\[\lim_{x+y} =C++\]
+\end{proof}
+ 
+\begin{example}[新高考\MakeUppercase{\romannumeral 2}]
+想象有$n$个有序排列的箱子，其中每个箱子可以放一个球或者不放球。令二项式系数(或称为组合数) 
+$m$ 个球的情况种数。
+
+\end{example}
+
+\begin{solution}
+    利用组合数，
+    \[ 
+      C^m_n= \binom{n}{m} = \frac{n!}{m!(n-m)!}
+    \]
+    我们可以归纳得出...
+\end{solution}
+
+
+ \clearpage

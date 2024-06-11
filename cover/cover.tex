@@ -1,0 +1,56 @@
+%-------------------自己写的封面非官方
+\newcommand{\ulineshort}[1]{\underline{\makebox[9em][c]{#1}}}
+\newcommand{\ulinelong}[1]{\underline{\makebox[22em][c]{\zihao{3} \kaishu #1}}}
+
+%华文中宋与宋体相差不大，所以用宋体加伪粗体代替了
+\newcommand{\zhongsongbf}[1]{\zihao{-3}  \songti \setBold[0.4] #1 \unsetBold} 
+\newcommand{\displaytitlefont}[1]{\zihao{-0} \songti  \setBold[0.4] #1 \unsetBold }
+
+%=========封面
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+\coordinate (SessionIDinfo) at (\textwidth,0);
+%---------每个部分以页面中心为相对位置
+\coordinate (Topic) at  (current page.center);
+\coordinate (BasicInfo) at ($(current page.center)!0.5!(current page.south)$);
+\coordinate (Dissertname) at ($(current page.center)!0.25!(current page.north)$);
+\coordinate (xnxybadge) at ($(current page.center)!0.5!(current page.north)$);
+\coordinate (xnxyName) at ($(xnxybadge)!0.5!(Dissertname)$);
+
+
+\node[anchor=north east] at (SessionIDinfo) {
+\begin{tabular}{l}
+    \zihao{5} \fangsong 届 \quad 别\ulineshort{\makebox[9em][c]{\tlsession}} \\
+    \zihao{5} \fangsong 学 \quad 号\ulineshort{\makebox[9em][c]{\tlid} } \\
+\end{tabular}
+};
+%==============论文主要元素
+\node at (xnxybadge) {
+    \includegraphics[scale=0.08]{cover/xnxyLogo}
+    };
+\node at (xnxyName) {
+    \includegraphics[scale=0.2]{cover/xnxyName}
+    };
+\node at (Dissertname) { \displaytitlefont{ \tldisplaytitle }};
+%============1/2处论文标题
+\node at (Topic) {
+\begin{minipage}[c]{0.8\textwidth}
+   \centering{ \zihao{-2} \CJKunderline{\tltitle}}
+\end{minipage}
+
+};
+
+%===========基本信息
+\node at (BasicInfo) {
+\begin{tabular}{c@{}l}
+    \zhongsongbf{姓\qquad \quad \qquad 名 }  & \ulinelong{\tlauthor }\\[0.5cm]
+    \zhongsongbf{学\quad 院、专 \quad 业 }    & \ulinelong{\tldepartment } \\[0.5cm]
+                                             & \ulinelong{\tlmajor }  \\[0.5cm]
+     \zhongsongbf{导师姓名、职称}          &\ulinelong{\tlsupervisor \quad \tlassocsupervisor}\\[0.5cm]
+     \zhongsongbf{完\quad 成\quad 时\quad 间 }& \ulinelong{\tldate } \\[0.5cm]
+\end{tabular}
+};
+\end{tikzpicture}
+\end{titlepage}
+
+    

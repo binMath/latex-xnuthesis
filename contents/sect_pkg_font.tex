@@ -1,0 +1,25 @@
+\section{宏包与字体}
+\subsection{宏包的使用}
+\LaTeX 宏包众多，能尽量用新宏包就用新的，优先用\LaTeX 3语法重构的，简要谈谈这几个宏包吧。
+\begin{enumerate}
+    \item  \emphasize {newtxmath} 这个宏包用于修改数学字体,与宏包\emphasize {amsthm}发生冲突\verb|\openbox|重定义。
+    \item  \emphasize{tocloft}与\emphasize{titletoc}如果同时使用在定义目录样式的时候会出现修改无效的问题。同样\emphasize{titlesec}与\verb|\ctexset|修改标题也会冲突，因为他们本身属于同一类宏包，修改相同的东西。
+\end{enumerate}
+
+\subsection{浅谈字体}
+\LaTeX 字体与word 不同，默认使用的是Fandol系列字体，大多时候不建议加载一些奇怪的字体，比较麻烦，用ctex宏集默认字体即可，ctex基本的中文字体都比较全面。
+
+\begin{center}
+\Large   
+英文  \qquad  \LARGE \textbf{font}  \huge \qquad  \textit{font}  \qquad \Huge \textsf{font}
+  
+ 
+\Large 中文   \qquad   \LARGE  \textbf{粗体}  \qquad \huge  \textit{斜体}  \qquad \Huge \textsf{无衬}
+
+{\Large  \songti 宋体}\qquad { \LARGE \heiti 黑体}\qquad {\huge \fangsong 仿宋}\qquad {\Huge \kaishu 楷书}
+\end{center}
+
+可以看到Fandol系列中文的黑体，就是无衬线字体sffamily,本文使用的
+\verb|\heiti|与\verb|\sffamily|效果一样，不同的是
+\verb|\heiti|只对中文有效，而\verb|\sffamily|是中英文都可使用。
+\newpage 

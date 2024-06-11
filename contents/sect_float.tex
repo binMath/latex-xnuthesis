@@ -1,0 +1,88 @@
+\section{浮动体}
+\subsection{图片}
+注意：分辨率较高的图片会增加编译时长。
+图片格式一般最好用pdf,eps等矢量图，放大不会失真,pdf图片兼容性好，图\ref{fig:pic}。
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{figures/float_exp_ai}
+        \caption{PDF}
+        \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{figures/float_exp_meizi}
+        \caption{EPS}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{figures/float_exp_mihoyo}
+        \caption{JPG}
+    \end{subfigure}
+    \caption{网络素材}
+    \label{fig:pic}
+\end{figure}
+
+\subsection{表格}
+
+长表格一般比较比较难输入，推荐使用工具，如\url{https://tablesgenerator.com/},实在不行用overleaf 自带的也行，长表格如果实在需要断页，一般来说需要标注续表。
+
+
+\begin{table}[!ht]
+\centering % 表格居中
+\caption{三线表格} % 表格标题
+\label{tab:example} % 用于引用的表格标签
+\begin{tabular}{lcr} % lcr表示三列分别左对齐、居中、右对齐
+\toprule % 顶部线
+\emphasize{左}对齐 & 居中 & \emphasize{右}对齐\\
+\midrule % 中间线
+$a_1$   & $\int$        &           $\aleph$         \\
+$a_1,b_2$   &  $\sum\sum$       &        $ \blacktriangleright \blacktriangleleft$    \\
+$a_1,b_2,c_3$    & $\prod\prod\prod$    &   $ \bigstar \circledS  \circlearrowright$   \\
+\bottomrule % 底部线
+\end{tabular}
+\end{table}
+
+\subsection{算法}
+算法目前推荐使用\emphasize{algorithm2e}宏包，代码环境一般用
+\emphasize{listings}宏包并使用\verb|\lstset|设置风格。
+
+\begin{algorithm}[H]
+\DontPrintSemicolon % 不显示分号
+\KwData{输入数据}
+\KwResult{输出结果}
+
+\SetKwFunction{FMain}{Main}
+\SetKwFunction{FSum}{Sum}
+
+\SetKwProg{Fn}{Function}{:}{}
+\Fn{\FMain{}}{
+  \KwData{这里可以描述函数的输入}
+  \KwResult{这里可以描述函数的输出}
+  \FSum{$a,b$}\;
+  \KwRet{$a+b$}\;
+}
+
+\SetKwProg{Fn}{Function}{:}{\KwRet}
+\Fn{\FSum{$a, b$}}{
+  \KwData{这里可以描述函数的输入}
+  \KwResult{这里可以描述函数的输出}
+  $sum \gets a + b$\;
+  \KwRet{$sum$}\;
+}
+\caption{示例算法}
+\end{algorithm}
+
+
+\subsection{代码}
+
+\begin{lstlisting}[style=Matlab,caption={MATALB}]
+%双曲抛物面
+clear;
+x = linspace(-10, 10, 100);
+y = linspace(-10, 10, 100);
+[X, Y] = meshgrid(x, y);
+Z = (X.^2)/3 - (Y.^2)/5;
+surf(X, Y, Z);  
+\end{lstlisting}
+
+\subsection{其他浮动体}
+据说支持JavaScript的PDF阅读器，通过\emphasize{media9}宏包，能实现视频或动画的播放。当然利用TikZ(在本文第5节介绍)一帧一帧的放也能实现动画效果，与beamer播放类似。
+\clearpage

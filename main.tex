@@ -1,0 +1,36 @@
+\documentclass{xnuthesis}
+%=======导言区
+\input{setup} %配置文件，自由加载宏包与论文的信息
+ 
+\begin{document}
+%=======封面
+\include{cover/cover}   %如果有问题，封面可以用word转PDF再进行插入
+
+%=======目录
+\tableContents 
+\frontmatter
+
+%========摘要
+\input{contents/abstract}
+\mainmatter 
+
+%========正文
+\input{contents/intro}
+\input{contents/sect_pkg_font}
+ \input{contents/sect_float}
+\input{contents/sect_math}
+\input{contents/sect_tikz}
+\input{contents/sect_cite_template}
+
+%========参考文献
+\printreferences
+
+%==========致谢
+\input{contents/acknowledgements}
+
+%========附录
+\appendix
+\input{contents/app_tikzpic}
+\input{contents/app_interpreter}
+\input{contents/app_process}
+\end{document}

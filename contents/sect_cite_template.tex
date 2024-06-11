@@ -1,0 +1,25 @@
+\section{文献引用与\LaTeX 模板}
+\subsection{文献}
+本文参考文献的格式为GB/T7714-2015,使用bibtex进行管理，\verb|\cite{}|对文献引用:
+\begin{center}
+
+单文件引用\cite{Cheng1999},多个文献引用\cite{CSTAM1990,GBT2659,HBLZ2001,Hopkinson1999,Jiang1989,Jiang1998,Li2000,Li1999,LSC1957,WHO1970,Yu2001,Zhang1998}。
+    
+\end{center}
+\subsection{模板}
+xnuthesis论文结构大致如下，更多使用方法可以参考本文的源码，如需学习
+撰写类文件可以看\url{https://github.com/rockyzhz/latexdoc-chinese-translation}提供的文档 ，有许多翻译后的中文文档可以参考。
+
+\begin{figure}[p]
+\centering
+\lstinputlisting[style=LaTex,caption={LaTex论文结构}]{main.tex}
+\end{figure}
+
+\LaTeXe{}对类文件开发维护困难，主要体现在许多命名规范上的问题 ，于是就产生了\LaTeX 3，\LaTeX 3语法就是由expl3宏包提供的，\url{https://texdoc.org/serve/interface3/0}是\LaTeX 3 语法的完整手册。\LaTeX 3更像是一门面向开发者的编程语言，有类型并且支持函数式编程，命名规范，
+缺点是目前还未完全普及，许多宏包还没支持新的l3语法，但这是未来的发展趋势。为了以后兼容性，本模板在类文件中部分也使用了\LaTeX3语法。
+
+\section{总结}
+本模板的许多结构方面参考了北航和上交的模板,作者全程依赖GPT解决了许多疑问，不得不说的是
+人工智能时代，信息获取方式越来越快，AI已经能实现模块化的基本需求，学习和写出 \LaTeX 程序变得更加轻松了，Typst 与 MathML发展日益强大，也希望某一天能出现更优秀简洁排版方式吧！
+
+\newpage
