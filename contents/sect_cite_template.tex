@@ -6,13 +6,14 @@
 单文件引用\cite{Cheng1999},多个文献引用\cite{CSTAM1990,GBT2659,HBLZ2001,Hopkinson1999,Jiang1989,Jiang1998,Li2000,Li1999,LSC1957,WHO1970,Yu2001,Zhang1998}。
     
 \end{center}
-\subsection{模板}
-xnuthesis论文结构大致如下，更多使用方法可以参考本文的源码，如需学习
+\subsection{模板的使用}
+想要写出一篇完整论文，除了.cls文件配置的格式文件，写作的过程的其他宏包仍然需要手动添加。本文就是基于xnuthesis.cls编写的，不一定适合所有人,模板提供了一些基础格式，如果需要更精细的格式还需自行重构。
+xnuthesis使用的论文组织结构大致如下，更多使用方法可以参考本文的源码，如需学习
 撰写类文件可以看\url{https://github.com/rockyzhz/latexdoc-chinese-translation}提供的文档 ，有许多翻译后的中文文档可以参考。
 
 \begin{figure}[p]
 \centering
-\lstinputlisting[style=LaTex,caption={LaTex论文结构}]{main.tex}
+\lstinputlisting[style=LaTex,caption={LaTex论文结构},label={lst:mainstructure}]{main.tex}
 \end{figure}
 
 \LaTeXe{}对类文件开发维护困难，主要体现在许多命名规范上的问题 ，于是就产生了\LaTeX 3，\LaTeX 3语法就是由expl3宏包提供的，\url{https://texdoc.org/serve/interface3/0}是\LaTeX 3 语法的完整手册。\LaTeX 3更像是一门面向开发者的编程语言，有类型并且支持函数式编程，命名规范，

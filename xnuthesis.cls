@@ -39,7 +39,7 @@ fontset=fandol
 \tl_new:N \g_sec_title_fmt_tl
 \tl_set:Nn \g_sec_title_fmt_tl {\zihao{-3} \sffamily}
 
-%=====默认行间距由ctex决定，暂时用间距变量调整无标题章节与正文间的间距======
+%=====默认行间距由ctex决定，暂时用间距变量调整章节标题与正文间的间距======
 
 \dim_new:N  \l_tmp_line_skip 
 \dim_set:Nn \l_tmp_line_skip { 20  bp }
@@ -113,7 +113,6 @@ fontset=fandol
 \seq_use:Nn \l_words_seq {；}
 }
 %============章节标题设置
-
 \ctex_set:nn { section }
 {
 afterindent = true,

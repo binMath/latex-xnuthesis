@@ -1,3 +1,6 @@
+%======================文献加载格式
+\usepackage[backend=biber,style=gb7714-2015, gbalign=gb7714-2015,gbnamefmt =lowercase]{biblatex}
+\addbibresource{refs.bib}
 %=========信息录入
 \xnxyInfo{
  session={2024届},
@@ -27,7 +30,7 @@
 \usepackage{ntheorem}
 
 \let \slantint \int
-\usepackage{cmupint}
+\usepackage{cmupint}%直立体
 \usepackage{pifont}%雪花星符号
 \usepackage{booktabs} %三线表
 
@@ -79,12 +82,9 @@ captionpos=b,% 题注在下
 \usepackage[siunitx]{circuitikz}%电路图
 \usepackage{fancybox}
 \usetikzlibrary{calc}
-%======================文献加载格式
-\usepackage[backend=biber,style=gb7714-2015, gbalign=gb7714-2015,gbnamefmt =lowercase]{biblatex}
-\addbibresource{refs.bib}
-%======封面
+
+%======某些地方需要伪粗体
 \usepackage{xfakebold}
 \usepackage{xeCJKfntef}%下划线兼容问题
 
-
-
+\setcounter{tocdepth}{2} % 设置目录深度为2
